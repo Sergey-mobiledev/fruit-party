@@ -1,120 +1,100 @@
 # Fruit Party
 
-Fruit Party is an Android slot game built with Kotlin. It was one of my first full Android projects and helped me practice game logic, MVVM architecture, local persistence, Firebase integration, animations and multi-screen navigation.
+Fruit Party is an Android slot-style game written in Kotlin. I built it in my first year as an Android developer as a learning project: I wanted to recreate the fruit-machine feel from arcade games I played as a kid, while practicing non-trivial UI animation, game-state flows, and persistence.
 
-The app is inspired by classic arcade slot machines: the player spins fruit reels, selects bet lines and rates, receives wins based on matching symbols, and can trigger a bonus card mini-game.
+The player spins five vertical reels, enables one to three paylines, adjusts the stake, and collects wins for three-, four-, or five-of-a-kind combinations. A coconut acts as a wild, a premium **Fruit Party** symbol pays higher, and strawberries can trigger a card bonus where red/black guesses multiply the prize—or end the round.
 
-## Features
+**Orientation:** slot play and the bonus mini-game run in **`MainActivity` locked to landscape** (cabinet-style layout). Splash and the game-selection screen are portrait.
 
-- Slot-style gameplay with animated reels
-- 5 reel columns rendered with `RecyclerView`
-- Configurable bet lines and bet rate
-- Credits, current win, and bonus win tracking
-- Win calculation for 3, 4, and 5 matching symbols
-- Wild-symbol logic with `Coconut`
-- Special `Fruit Party` symbol with higher payouts
-- Strawberry-triggered bonus game
-- Bonus card mini-game with red/black card selection
-- Auto-spin mode
-- Local user profile with avatar, name, username, credits, and game state
-- Local persistence with Room
-- Firebase / Firestore-based remote configuration flow
-- Blog/privacy-policy screens loaded via Retrofit
-- Dependency injection with Koin
+## Highlights
 
-## Tech Stack
+- Five reel columns driven by `RecyclerView`, with spin animations that **stop the reels one after another** (staggered braking) so the spin reads closer to a physical cabinet than every column snapping at once; stopped tiles are read back into active paylines for evaluation
+- **Weighted reel decks**: each symbol is defined with an integer **`weight`** and line multipliers **`x3` / `x4` / `x5`** (`Element`). The repository builds each reel’s pool by **`repeat(element.weight)`**—every icon is copied that many times into a list, then the lists are **shuffled** and bound to the adapters; middle reels use the full pool, outer reels use the same idea **without strawberries**. Payouts and rarity are tuned together in data (e.g. **Fruit Party** has weight `1` and the largest multipliers), not computed automatically from the paytable
+- Payline UI that switches which horizontal lines are active and wires those choices into win calculation
+- Win presentation that animates successful lines after the reels settle (including wild handling via coconut)
+- Strawberry-triggered “super game” flow with its own animation beat before the card bonus
+- Tunable game feel by changing each symbol’s **`weight`** without rewriting win logic
+- Auto-spin, local credits/profile, and game state persisted with Room
+- Optional Firebase/Firestore-driven remote configuration and Retrofit-backed blog/privacy screens
 
-- Kotlin
-- MVVM
-- Android ViewModel + LiveData
-- Kotlin Coroutines + SharedFlow
-- Room Database
-- Retrofit + Gson
-- Firebase Analytics, Firestore, Auth, Messaging
-- Koin
-- RecyclerView + DiffUtil
-- ViewBinding
-- Navigation Component
-- Glide
+## Demo
+
+Landscape recording — wider preview:
+
+<p align="center">
+  <img src="assets/demo/fruit-demo.gif" alt="Fruit Party demo (landscape)" width="640" />
+</p>
+
+The clip shows typical gameplay in landscape (spin/stop cadence, wins, and bonus flow).
+
+## Screenshots
+
+All gameplay captures below are **horizontal (landscape)** to match the slot UI.
+
+<p align="center">
+  <img src="assets/screenshots/game.jpg" alt="Main slot screen" width="420" />
+  <img src="assets/screenshots/game-lines.jpg" alt="Paylines and stake controls" width="420" />
+</p>
+
+<p align="center">
+  <img src="assets/screenshots/game-5-cherry-win.jpg" alt="Five cherry win on a line" width="420" />
+  <img src="assets/screenshots/game-strawberry-win.jpg" alt="Strawberry line win" width="420" />
+</p>
+
+<p align="center">
+  <img src="assets/screenshots/super-game.jpg" alt="Strawberry bonus card game" width="420" />
+  <img src="assets/screenshots/super-game-win.jpg" alt="Bonus round win" width="420" />
+</p>
+
+<p align="center">
+  <img src="assets/screenshots/super-game-loss.jpg" alt="Bonus round loss" width="420" />
+</p>
 
 ## Architecture
 
-The project follows a simple MVVM-style structure:
+MVVM-style layout with repositories coordinating Room, Firebase loading, slot outcome calculation, and bonus state. UI layer uses ViewModels, LiveData/flows, Navigation Component, and Koin for DI.
 
 ```text
 app/src/main/java/com/example/fruitparty
 ├── data
-│   ├── database        # Room database, DAOs, converters
-│   ├── model           # User, element, card, blog and Firestore models
-│   ├── repository      # Local, remote and shared repository logic
-│   └── services        # Network API, constants, loading/game states
-├── di                  # Koin modules and application setup
-└── ui                  # Activities, fragments, adapters and ViewModels
+│   ├── database        # Room entities, DAOs, converters
+│   ├── model           # User, symbols, cards, blog/Firestore models
+│   ├── repository      # Local/remote coordination and game logic glue
+│   └── services        # Network helpers, constants, loading/game states
+├── di                  # Koin modules
+└── ui                  # Activities, fragments, adapters, ViewModels
 ```
 
-`Repository` coordinates the main game state, local Room storage, Firebase data loading, blog API calls, slot result calculation, bonus game state, and shared flows used by the UI.
+## Tech Stack
 
-## Gameplay Logic
+- Kotlin, MVVM, ViewBinding, Navigation Component  
+- Coroutines, LiveData, SharedFlow  
+- Room, Retrofit + Gson, Koin  
+- Firebase (Analytics, Auth, Firestore, Messaging, Remote Config flow)  
+- RecyclerView + DiffUtil, Glide  
 
-The main slot screen contains five vertical reels. During a spin, each reel scrolls to a randomized position. After the animation stops, the visible symbols are collected into active bet lines and passed to the result calculation logic.
+## Requirements
 
-The game supports:
+- Android Studio  
+- JDK 17  
+- Android SDK 35  
+- Minimum SDK 21  
 
-- 1 to 3 active lines
-- Variable bet rate per line
-- Weighted symbol generation
-- 3/4/5-symbol payouts
-- Wild matching through the Coconut symbol
-- Bonus-game activation when enough Strawberries appear
+## Running the Project
 
-The bonus game lets the player choose a card color and open one of several hidden cards. A correct guess doubles the bonus win, while a wrong guess ends the bonus round.
-
-## Screens
-
-- Splash screen
-- Game selection screen
-- Slot game screen
-- Bonus card game screen
-- Blog list and article screens
-- Privacy policy screen
-
-## Setup
-
-1. Clone the repository:
-
-   ```bash
-   git clone <repository-url>
-   ```
-
-2. Open the project in Android Studio.
-
-3. Add your Firebase config if needed:
-
-   ```text
-   app/google-services.json
-   ```
-
-4. Build and run the app:
+1. Clone the repository.  
+2. Open it in Android Studio and sync Gradle.  
+3. Add your own `app/google-services.json` if you want Firebase-backed features to run end-to-end (Analytics/Firestore/etc.). Without it, local gameplay may still build depending on how Firebase is initialized—verify against your configuration.  
+4. Run the `app` configuration on an emulator or device:
 
    ```bash
    ./gradlew assembleDebug
    ```
 
-## Notes
+## Project Status
 
-This project was created early in my Android development journey, so some parts intentionally reflect the learning stage of the codebase. With my current experience, I would improve separation of game-engine logic from UI, add more tests around win calculation, simplify some repository responsibilities, and prepare the monetization layer with Google Play Billing or RevenueCat.
-
-## Future Improvements
-
-- Add in-app purchases for coin packs
-- Extract slot result calculation into a dedicated game engine module
-- Add unit tests for payout and bonus-game logic
-- Improve animations and visual polish
-- Add sound and vibration settings
-- Refactor Firebase configuration flow
-- Add a demo video and screenshots for portfolio presentation
+Early-career portfolio piece. It reflects solid experimentation with animation-heavy gameplay and stateful UI on Android. Given more time today I would extract pure slot/bonus engines for testing, trim repository responsibilities, expand unit coverage around payouts and weighting, and harden the Firebase/bootstrap path for offline-first play.
 
 ## Author
 
-Sergey Kosarevskiy  
-Android / React Native Developer
+Sergey Kosarevskiy — Android / React Native developer  
