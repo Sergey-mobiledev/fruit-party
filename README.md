@@ -84,8 +84,7 @@ app/src/main/java/com/example/fruitparty
 
 1. Clone the repository.  
 2. Open it in Android Studio and sync Gradle.  
-3. Add your own `app/google-services.json` if you want Firebase-backed features to run end-to-end (Analytics/Firestore/etc.). Without it, local gameplay may still build depending on how Firebase is initialized—verify against your configuration.  
-4. Run the `app` configuration on an emulator or device:
+3. Run the `app` configuration on an emulator or device:
 
    ```bash
    ./gradlew assembleDebug
