@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.privacyPolicy.PrivacyPolicyFragment"
+    android:background="@drawable/field_fragment_background">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/top_guide_line"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="50dp"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/start_guide_line"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.08"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/end_guide_line"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.92"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/button_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintTop_toTopOf="@id/top_guide_line"
+                android:background="@drawable/field_button_background_radius_5">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/field_black_background_radius_5">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:src="@drawable/image_back"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_fragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/top_guide_line"
+                app:layout_constraintStart_toEndOf="@id/button_back"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:layout_marginEnd="-12dp"
+                android:textAppearance="@style/All_round_gothic_w01.20sp.White"
+                android:text="@string/privacy_policy"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/title_fragment"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="29dp"
+                android:text="@string/tv1"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv1"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv2"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv2"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv3"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv3"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.15sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv4"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv4"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv5"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv5"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.15sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv6"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv6"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv7"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv7"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv8"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv8"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv9"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv9"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.15sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv10"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv11"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv10"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv11"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv11"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.15sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv12"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv13"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv12"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv13"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv13"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.15sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv14"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv15"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv14"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv15"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv15"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.15sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv16"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv17"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv16"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv17"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv17"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.15sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv18"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv19"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv18"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv19"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv19"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv20"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv21"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv20"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.15sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv21"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv22"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv21"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv22"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv23"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv22"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv23"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv24"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv23"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv24"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv25"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv24"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.15sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv25"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv26"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv25"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv26"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv27"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv26"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv27"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv28"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv27"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.15sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv28"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv29"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv28"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv29"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv30"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv29"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.15sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv30"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv31"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv30"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv31"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv32"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv31"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.15sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv32"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv33"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv32"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv33"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv34"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv33"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.15sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv34"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv35"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv34"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv35"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv36"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv35"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                android:textAppearance="@style/All_round_gothic_w01.15sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv36"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv37"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv36"
+                app:layout_constraintStart_toStartOf="@id/start_guide_line"
+                app:layout_constraintEnd_toEndOf="@id/end_guide_line"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textAppearance="@style/All_round_gothic_w01.12sp.White"
+                android:layout_marginTop="9dp"
+                android:text="@string/tv37"
+                android:layout_marginBottom="29dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

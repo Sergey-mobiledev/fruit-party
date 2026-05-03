@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="All_round_gothic_w01">
+        <item name="fontFamily">@font/all_round_gothic_w01</item>
+    </style>
+
+    <style name="All_round_gothic_w01.6sp">
+        <item name="android:textSize">6sp</item>
+    </style>
+
+    <style name="All_round_gothic_w01.7sp">
+        <item name="android:textSize">7sp</item>
+    </style>
+
+    <style name="All_round_gothic_w01.8sp">
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="All_round_gothic_w01.9sp">
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <style name="All_round_gothic_w01.10sp">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="All_round_gothic_w01.12sp">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="All_round_gothic_w01.13sp">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="All_round_gothic_w01.15sp">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="All_round_gothic_w01.20sp">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="All_round_gothic_w01.6sp.Yellow_school_bus_color">
+        <item name="android:textColor">@color/yellow_school_bus_color</item>
+    </style>
+
+    <style name="All_round_gothic_w01.7sp.Yellow_school_bus_color">
+        <item name="android:textColor">@color/yellow_school_bus_color</item>
+    </style>
+
+    <style name="All_round_gothic_w01.8sp.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="All_round_gothic_w01.9sp.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="All_round_gothic_w01.10sp.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="All_round_gothic_w01.12sp.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="All_round_gothic_w01.12sp.Azure">
+        <item name="android:textColor">@color/azure</item>
+    </style>
+
+    <style name="All_round_gothic_w01.12sp.Lime">
+        <item name="android:textColor">@color/lime</item>
+    </style>
+
+    <style name="All_round_gothic_w01.12sp.Yellow_school_bus_color">
+        <item name="android:textColor">@color/yellow_school_bus_color</item>
+    </style>
+
+    <style name="All_round_gothic_w01.12sp.Pearl_night_2">
+        <item name="android:textColor">@color/pearl_night_2</item>
+    </style>
+
+    <style name="All_round_gothic_w01.12sp.Toad_in_love_color">
+        <item name="android:textColor">@color/toad_in_love_color</item>
+    </style>
+
+    <style name="All_round_gothic_w01.13sp.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="All_round_gothic_w01.15sp.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="All_round_gothic_w01.15sp.Grey_window">
+        <item name="android:textColor">@color/grey_window</item>
+    </style>
+
+    <style name="All_round_gothic_w01.20sp.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CornersSize5dp" parent="">
+        <item name="cornerSize">5dp</item>
+    </style>
+
+    <style name="CornersSize10dp" parent="">
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <style name="BottomCornersSize10dp" parent="">
+        <item name="cornerSizeBottomRight">10dp</item>
+        <item name="cornerSizeBottomLeft">10dp</item>
+    </style>
+</resources>
